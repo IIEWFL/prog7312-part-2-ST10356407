@@ -2,6 +2,8 @@
 
 A modern ASP.NET Core MVC web application that demonstrates advanced data structures implementation for municipal services management. The application features issue reporting using a custom linked list and a sophisticated events management system using multiple data structures.
 
+## YouTube Video Link: https://youtu.be/nOBOMl4PJQQ
+
 ## Features
 
 ### Issue Reporting System
