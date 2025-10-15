@@ -24,7 +24,7 @@ A modern ASP.NET Core MVC web application that demonstrates advanced data struct
 
 - **Framework**: ASP.NET Core 8.0 MVC
 - **Language**: C#
-- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap
+- **Frontend**: HTML5, CSS3, JavaScript
 - **Data Storage**: In-memory data structures (no database required)
 - **File Storage**: Local file system for uploads
 
