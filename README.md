@@ -19,6 +19,7 @@ A modern ASP.NET Core MVC web application that demonstrates advanced data struct
 - **User Session Tracking**: Personalized experience with view history
 - **Priority Management**: High-priority announcements and events
 - **Date Filtering**: Filter events by time periods (today, this week, this month)
+
 ##Updated Priority level to show (not showwn in video)
 <p align="center">
   <img src="Images/Screenshot 2025-10-15 223756.png" alt="whatever you want label it" width="180">
