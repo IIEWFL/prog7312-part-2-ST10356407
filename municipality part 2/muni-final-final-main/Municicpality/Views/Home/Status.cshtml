@@ -1,0 +1,321 @@
+﻿@{
+    ViewData["Title"] = "Service Request Status";
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0a0a0a;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            radial-gradient(circle at 80px 40px, rgba(255, 255, 255, 0.015) 0.5px, transparent 0.5px),
+            radial-gradient(circle at 40px 80px, rgba(255, 255, 255, 0.025) 1.5px, transparent 1.5px);
+        background-size: 100px 100px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    h1 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: 3rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        padding: 48px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .container:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2), 0 12px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .coming-soon {
+        color: #3b82f6;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .message {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.2rem;
+        margin-bottom: 32px;
+        line-height: 1.6;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #3b82f6 0%, rgba(59, 130, 246, 0.8) 100%);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        padding: 16px 32px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        margin-right: 16px;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2), 0 0 30px rgba(59, 130, 246, 0.2);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        padding: 16px 32px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .action-buttons {
+        margin-top: 32px;
+    }
+
+    /* Animated Envelope Styles */
+    .letter-image {
+        position: relative;
+        margin: 40px auto;
+        width: 200px;
+        height: 200px;
+        cursor: pointer;
+    }
+
+    .animated-mail {
+        position: absolute;
+        height: 150px;
+        width: 200px;
+        transition: 0.4s;
+    }
+
+    .animated-mail .body {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 100px 200px;
+        border-color: transparent transparent #3b82f6 transparent;
+        z-index: 2;
+    }
+
+    .animated-mail .top-fold {
+        position: absolute;
+        top: 50px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 100px 0 100px;
+        transform-origin: 50% 0%;
+        transition: transform 0.4s 0.4s, z-index 0.2s 0.4s;
+        border-color: #1e3a8a transparent transparent transparent;
+        z-index: 2;
+    }
+
+    .animated-mail .back-fold {
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        height: 100px;
+        background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        z-index: 0;
+    }
+
+    .animated-mail .left-fold {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 0 50px 100px;
+        border-color: transparent transparent transparent #1e40af;
+        z-index: 2;
+    }
+
+    .animated-mail .letter {
+        left: 20px;
+        bottom: 0px;
+        position: absolute;
+        width: 160px;
+        height: 60px;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 4px;
+        z-index: 1;
+        overflow: hidden;
+        transition: 0.4s 0.2s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .animated-mail .letter .letter-border {
+        height: 10px;
+        width: 100%;
+        background: repeating-linear-gradient(
+            -45deg,
+            #3b82f6,
+            #3b82f6 8px,
+            transparent 8px,
+            transparent 18px
+        );
+    }
+
+    .animated-mail .letter .letter-title {
+        margin-top: 10px;
+        margin-left: 5px;
+        height: 10px;
+        width: 40%;
+        background: #3b82f6;
+        border-radius: 2px;
+    }
+
+    .animated-mail .letter .letter-context {
+        margin-top: 10px;
+        margin-left: 5px;
+        height: 10px;
+        width: 20%;
+        background: #1e40af;
+        border-radius: 2px;
+    }
+
+    .animated-mail .letter .letter-stamp {
+        margin-top: 30px;
+        margin-left: 120px;
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .shadow {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        width: 400px;
+        height: 30px;
+        transition: 0.4s;
+        transform: translateX(-50%);
+        border-radius: 100%;
+        background: radial-gradient(
+            rgba(59, 130, 246, 0.3),
+            rgba(59, 130, 246, 0.1),
+            rgba(0, 0, 0, 0)
+        );
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .letter-image:hover .animated-mail {
+        transform: translateY(50px);
+    }
+
+    .letter-image:hover .animated-mail .top-fold {
+        transition: transform 0.4s, z-index 0.2s;
+        transform: rotateX(180deg);
+        z-index: 0;
+    }
+
+    .letter-image:hover .animated-mail .letter {
+        height: 180px;
+    }
+
+    .letter-image:hover .shadow {
+        width: 250px;
+    }
+</style>
+
+<h1>Service Request Status</h1>
+
+<div class="container">
+    <div class="coming-soon">Coming Soon</div>
+    
+    <div class="letter-image">
+        <div class="animated-mail">
+            <div class="back-fold"></div>
+            <div class="letter">
+                <div class="letter-border"></div>
+                <div class="letter-title"></div>
+                <div class="letter-context"></div>
+                <div class="letter-stamp"></div>
+            </div>
+            <div class="top-fold"></div>
+            <div class="body"></div>
+            <div class="left-fold"></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+    
+    <div class="message">
+        <p>This feature is currently under development and will be available soon.</p>
+        
+    </div>
+    
+    <div class="action-buttons">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary"><i class="fas fa-home"></i> Back to Home</a>
+        <a asp-controller="Home" asp-action="Create" class="btn btn-secondary"><i class="fas fa-edit"></i> Report an Issue</a>
+    </div>
+</div>

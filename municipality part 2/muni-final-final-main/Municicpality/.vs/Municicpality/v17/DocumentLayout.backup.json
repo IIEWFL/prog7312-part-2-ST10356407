@@ -1,0 +1,485 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\events\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\controllers\\issuereportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:controllers\\issuereportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\home\\status.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\home\\status.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\eventsearchhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\eventsearchhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\popularcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\popularcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\services\\eventmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:services\\eventmanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\eventviewhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\eventviewhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\home\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\home\\announcements.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\events\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\events\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\services\\issuereportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:services\\issuereportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\usercategorypreference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\usercategorypreference.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\trendingcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\trendingcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\localevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\localevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\isuuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\isuuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\models\\issuereportlinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:models\\issuereportlinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\home\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\views\\events\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:views\\events\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|c:\\users\\rames\\downloads\\muni-final-final-main\\muni-final-final-main\\municicpality\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B5D5D74B-B253-47FD-89CE-278B50111CF8}|Municicpality.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T20:35:40.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Status.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Status.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Status.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Status.cshtml",
+              "RelativeToolTip": "Views\\Home\\Status.cshtml",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAAAG4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T20:35:26.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IssueReportController.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Controllers\\IssueReportController.cs",
+              "RelativeDocumentMoniker": "Controllers\\IssueReportController.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Controllers\\IssueReportController.cs",
+              "RelativeToolTip": "Controllers\\IssueReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:36:36.343Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAAgAAACLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:34:42.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "Controllers\\EventsController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBUAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T23:42:05.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Events\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Events\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Events\\Index.cshtml",
+              "RelativeToolTip": "Views\\Events\\Index.cshtml",
+              "ViewState": "AgIAAN8CAAAAAAAAAAAAAOwCAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-14T23:41:28.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T18:07:21.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EventSearchHistory.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\EventSearchHistory.cs",
+              "RelativeDocumentMoniker": "Models\\EventSearchHistory.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\EventSearchHistory.cs",
+              "RelativeToolTip": "Models\\EventSearchHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T23:41:51.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:37:11.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PopularCategory.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\PopularCategory.cs",
+              "RelativeDocumentMoniker": "Models\\PopularCategory.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\PopularCategory.cs",
+              "RelativeToolTip": "Models\\PopularCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAADXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T03:35:46.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAAAOEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-15T01:00:13.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-15T18:08:27.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAhwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T02:27:04.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-15T18:08:10.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EventViewHistory.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\EventViewHistory.cs",
+              "RelativeDocumentMoniker": "Models\\EventViewHistory.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\EventViewHistory.cs",
+              "RelativeToolTip": "Models\\EventViewHistory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAADXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T18:02:15.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EventManagementService.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Services\\EventManagementService.cs",
+              "RelativeDocumentMoniker": "Services\\EventManagementService.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Services\\EventManagementService.cs",
+              "RelativeToolTip": "Services\\EventManagementService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T22:15:47.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Announcements.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Announcements.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Announcements.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Announcements.cshtml",
+              "RelativeToolTip": "Views\\Home\\Announcements.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwIgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T20:35:16.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Events\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Events\\Create.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Events\\Create.cshtml",
+              "RelativeToolTip": "Views\\Events\\Create.cshtml",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAswK0AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-14T23:07:39.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IssueReportService.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Services\\IssueReportService.cs",
+              "RelativeDocumentMoniker": "Services\\IssueReportService.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Services\\IssueReportService.cs",
+              "RelativeToolTip": "Services\\IssueReportService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAqwBcAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:38:26.189Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserCategoryPreference.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\UserCategoryPreference.cs",
+              "RelativeDocumentMoniker": "Models\\UserCategoryPreference.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\UserCategoryPreference.cs",
+              "RelativeToolTip": "Models\\UserCategoryPreference.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAADXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T18:02:00.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TrendingCategory.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\TrendingCategory.cs",
+              "RelativeDocumentMoniker": "Models\\TrendingCategory.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\TrendingCategory.cs",
+              "RelativeToolTip": "Models\\TrendingCategory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAADYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T18:01:53.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LocalEvent.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\LocalEvent.cs",
+              "RelativeDocumentMoniker": "Models\\LocalEvent.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\LocalEvent.cs",
+              "RelativeToolTip": "Models\\LocalEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAADXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-15T17:54:07.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IsuueReport.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\IsuueReport.cs",
+              "RelativeDocumentMoniker": "Models\\IsuueReport.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\IsuueReport.cs",
+              "RelativeToolTip": "Models\\IsuueReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:38:13.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IssueReportLinkedList.cs",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\IssueReportLinkedList.cs",
+              "RelativeDocumentMoniker": "Models\\IssueReportLinkedList.cs",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Models\\IssueReportLinkedList.cs",
+              "RelativeToolTip": "Models\\IssueReportLinkedList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAADtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:37:15.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Create.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Home\\Create.cshtml",
+              "RelativeToolTip": "Views\\Home\\Create.cshtml",
+              "ViewState": "AQIAADABAAAAAAAAAAAAAEABAACHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-10T18:40:56.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-10T20:50:44.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AQIAAIUUAAAAAAAAAAAgwJUUAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-14T22:14:23.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAkwCcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-15T00:54:25.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Events\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Events\\Details.cshtml",
+              "ToolTip": "C:\\Users\\rames\\Downloads\\muni-final-final-main\\muni-final-final-main\\Municicpality\\Views\\Events\\Details.cshtml",
+              "RelativeToolTip": "Views\\Events\\Details.cshtml",
+              "ViewState": "AQIAACMBAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-14T23:07:23.316Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

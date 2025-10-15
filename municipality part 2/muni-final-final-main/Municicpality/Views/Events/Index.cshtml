@@ -1,0 +1,920 @@
+@model Municicpality.Controllers.EventsIndexViewModel
+@{
+    ViewData["Title"] = "Local Events & Announcements";
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0a0a0a;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            radial-gradient(circle at 80px 40px, rgba(255, 255, 255, 0.015) 0.5px, transparent 0.5px),
+            radial-gradient(circle at 40px 80px, rgba(255, 255, 255, 0.025) 1.5px, transparent 1.5px);
+        background-size: 100px 100px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    h1 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: 3rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px;
+    }
+
+    .search-section {
+        margin-bottom: 40px;
+        padding: 32px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-form {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        align-items: end;
+        margin-bottom: 24px;
+    }
+
+    .trending-categories {
+        margin-bottom: 32px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .trending-categories h3 {
+        color: #3b82f6;
+        margin-bottom: 16px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .trending-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .trending-tag {
+        background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+
+    .trending-tag:hover {
+        background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        color: white;
+        text-decoration: none;
+    }
+
+   
+    .last-viewed-section {
+        margin-bottom: 32px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .last-viewed-section h3 {
+        color: #3b82f6;
+        margin-bottom: 16px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .last-viewed-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.3s ease;
+    }
+
+    .last-viewed-card:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+    }
+
+    .last-viewed-info h4 {
+        color: #ffffff;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .last-viewed-category {
+        color: #3b82f6;
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+        font-weight: 500;
+    }
+
+    .last-viewed-time {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+    .btn-sm {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        white-space: nowrap;
+    }
+
+  
+    .announcements-section {
+        margin-top: 40px;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .announcements-section h2 {
+        color: #3b82f6;
+        margin-bottom: 24px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    .announcements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+    }
+
+    .announcement-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .announcement-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+    }
+
+    .announcement-card:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+    }
+
+    .announcement-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 12px;
+    }
+
+    .announcement-header h3 {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+    }
+
+    .announcement-date {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.85rem;
+        white-space: nowrap;
+        margin-left: 12px;
+    }
+
+    .announcement-card p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        margin-bottom: 16px;
+        font-size: 0.95rem;
+    }
+
+    .announcement-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+    }
+
+    .announcement-category {
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+
+   
+    @@media (max-width: 768px) {
+        .announcements-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .announcement-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .announcement-date {
+            margin-left: 0;
+        }
+
+        .announcements-section {
+            padding: 20px;
+        }
+    }
+
+    .form-group {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #ffffff;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        position: relative;
+    }
+
+    label::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: linear-gradient(90deg, #3b82f6, rgba(59, 130, 246, 0.3));
+        border-radius: 1px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 16px 20px;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        outline: none;
+    }
+
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 400;
+    }
+
+    .form-control:focus {
+        border-color: rgba(59, 130, 246, 0.6);
+        background: rgba(255, 255, 255, 0.12);
+        box-shadow: 
+            0 0 0 3px rgba(59, 130, 246, 0.15),
+            0 8px 25px rgba(0, 0, 0, 0.15);
+        transform: translateY(-1px);
+    }
+
+    .form-control:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    
+    select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 18px center;
+        background-size: 18px;
+        padding-right: 50px;
+        cursor: pointer;
+    }
+
+
+    select.form-control option {
+        background: rgba(30, 41, 59, 0.95);
+        color: #ffffff;
+        padding: 12px 16px;
+        border: none;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+    }
+
+    select.form-control option:hover {
+        background: rgba(59, 130, 246, 0.2);
+    }
+
+    select.form-control option:checked {
+        background: rgba(59, 130, 246, 0.3);
+        color: #ffffff;
+    }
+
+    .search-buttons {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #3b82f6 0%, rgba(59, 130, 246, 0.8) 100%);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        padding: 16px 32px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2), 0 0 30px rgba(59, 130, 246, 0.2);
+    }
+
+    .btn-secondary {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .events-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 24px;
+        margin-bottom: 40px;
+        background: none;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+    }
+
+    .event-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        will-change: transform, box-shadow, background;
+    }
+
+    .event-card:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 
+            0 12px 25px rgba(0, 0, 0, 0.2),
+            0 0 30px rgba(59, 130, 246, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .event-card:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.08) 0%, 
+            rgba(255, 255, 255, 0.03) 50%, 
+            rgba(255, 255, 255, 0.08) 100%);
+        pointer-events: none;
+        z-index: 1;
+        border-radius: 16px;
+    }
+
+    .event-card:hover > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    .event-card h3 {
+        margin: 0 0 12px 0;
+        font-size: 1.3rem;
+        color: #3b82f6;
+        font-weight: 700;
+    }
+
+    .event-card .category {
+        display: inline-block;
+        background: rgba(59, 130, 246, 0.25);
+        color: #ffffff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+    }
+
+    .event-card .date {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+
+    .event-card .location {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .event-card p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+
+    .announcement {
+        border-left: 4px solid #1d4ed8;
+    }
+
+    .priority-display {
+        display: inline-block;
+        margin-left: 8px;
+        padding: 2px 8px;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .priority-high {
+        background: rgba(147, 51, 234, 0.2);
+        color: #a855f7;
+        border: 1px solid rgba(147, 51, 234, 0.3);
+    }
+
+    .priority-medium {
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+        border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .priority-low {
+        background: rgba(107, 114, 128, 0.2);
+        color: #9ca3af;
+        border: 1px solid rgba(107, 114, 128, 0.3);
+    }
+
+    .recommendations-section {
+        margin-top: 40px;
+        padding: 32px;
+        background: rgba(59, 130, 246, 0.1);
+        border-radius: 16px;
+        border: 1px solid rgba(59, 130, 246, 0.2);
+    }
+
+    .recommendations-section h2 {
+        color: #3b82f6;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .no-events {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.1rem;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .back-button {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    @@media (max-width: 768px) {
+        .container {
+            margin: 10px;
+            padding: 32px 24px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 32px;
+        }
+
+        .search-form {
+            flex-direction: column;
+        }
+
+        .events-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+
+<div style="text-align: center; margin-bottom: 24px;">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary" style="width: auto !important; max-width: 180px !important; padding: 10px 16px !important; text-transform: none !important; font-size: 0.9rem !important; display: inline-block !important; white-space: nowrap !important;">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+
+<h1>Local Events & Announcements</h1>
+@* //Anon (2020). How To Create a Filter/Search List. [online] W3schools.com. Available at: https://www.w3schools.com/howto/howto_js_filter_lists.asp. *@
+<div class="container">
+    <!-- Search Section -->
+    <div class="search-section">
+        <form asp-action="Search" method="post" class="search-form">
+            <div class="form-group">
+                <label for="searchTerm">Search Events</label>
+                <input type="text" name="searchTerm" id="searchTerm" class="form-control" 
+                       placeholder="Search by title, description, or location..." 
+                       value="@Model.SearchTerm" />
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category" id="category" class="form-control">
+                    <option value="">All Categories</option>
+                    @foreach (var cat in Model.Categories)
+                    {
+                        <option value="@cat" selected="@(Model.SelectedCategory == cat)">@cat</option>
+                    }
+                </select>
+            </div>
+       @*      Anon (2020). How To Create a Filter/Search List. [online] W3schools.com. Available at: https://www.w3schools.com/howto/howto_js_filter_lists.asp.
+johntait.org (2013). What is the simplest way to filter the content of a web page from a drop down menu? [online] Stack Overflow. Available at: https://stackoverflow.com/questions/17098649/what-is-the-simplest-way-to-filter-the-content-of-a-web-page-from-a-drop-down-me.
+       *@
+            <div class="form-group">
+                <label for="dateFilter">Date Filter</label>
+                <select name="dateFilter" id="dateFilter" class="form-control">
+                    <option value="">All Dates</option>
+                    <option value="today" selected="@(Model.SelectedDateFilter == "today")">Today</option>
+                    <option value="tomorrow" selected="@(Model.SelectedDateFilter == "tomorrow")">Tomorrow</option>
+                    <option value="thisWeek" selected="@(Model.SelectedDateFilter == "thisWeek")">This Week</option>
+                    <option value="nextWeek" selected="@(Model.SelectedDateFilter == "nextWeek")">Next Week</option>
+                    <option value="thisMonth" selected="@(Model.SelectedDateFilter == "thisMonth")">This Month</option>
+                    <option value="nextMonth" selected="@(Model.SelectedDateFilter == "nextMonth")">Next Month</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="hidden" name="userSession" value="@Guid.NewGuid().ToString()" />
+                <div class="search-buttons">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="clearFilters()">
+                        <i class="fas fa-times"></i> 
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Trending Categories -->
+        @if (Model.TrendingCategories != null && Model.TrendingCategories.Any())
+        {
+            <div class="trending-categories">
+                <h3><i class="fas fa-fire"></i> Trending Categories</h3>
+                <div class="trending-tags">
+                    @foreach (var trendingCat in Model.TrendingCategories)
+                    {
+                        <a asp-action="ByCategory" asp-route-category="@trendingCat" class="trending-tag">
+                            @trendingCat
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+
+        <!-- Last Viewed Event -->
+        @if (Model.LastViewedEvent != null)
+        {
+            <div class="last-viewed-section">
+                <h3><i class="fas fa-history"></i> Last Viewed Event</h3>
+                <div class="last-viewed-card">
+                    <div class="last-viewed-info">
+                        <h4>@Model.LastViewedEvent.EventTitle</h4>
+                        <p class="last-viewed-category">@Model.LastViewedEvent.EventCategory</p>
+                        <p class="last-viewed-time">Viewed: @Model.LastViewedEvent.ViewedAt.ToString("MMM dd, yyyy 'at' h:mm tt")</p>
+                    </div>
+                    <a asp-action="Details" asp-route-id="@Model.LastViewedEvent.EventId" class="btn btn-primary btn-sm">
+                        <i class="fas fa-eye"></i> View Again
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Events Grid -->
+    @if (Model.AllEvents.Any())
+    {
+        <div class="events-grid">
+            @foreach (var eventItem in Model.AllEvents)
+            {
+                <div class="event-card @(eventItem.IsAnnouncement ? "announcement" : "")">
+                    
+                    <div class="category">
+                        @eventItem.Category
+                        @if (!eventItem.IsAnnouncement)
+                        {
+                            <span class="priority-display @(eventItem.Priority <= 2 ? "priority-high" : 
+                                eventItem.Priority <= 3 ? "priority-medium" : "priority-low")">
+                                Priority @eventItem.Priority
+                            </span>
+                        }
+                    </div>
+                    
+                    <h3>@eventItem.Title</h3>
+                    
+                    <div class="date">
+                        <i class="fas fa-calendar-alt"></i> @eventItem.EventDate.ToString("dddd, MMMM dd, yyyy 'at' h:mm tt")
+                    </div>
+                    
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> @eventItem.Location
+                    </div>
+                    
+                    <p>@eventItem.Description</p>
+                    
+                    @if (!string.IsNullOrEmpty(eventItem.Organizer))
+                    {
+                        <p><strong><i class="fas fa-user"></i> Organizer:</strong> @eventItem.Organizer</p>
+                    }
+                    
+                    @if (!string.IsNullOrEmpty(eventItem.ContactInfo))
+                    {
+                        <p><strong><i class="fas fa-phone"></i> Contact:</strong> @eventItem.ContactInfo</p>
+                    }
+                    
+                    <a asp-action="Details" asp-route-id="@eventItem.Id" class="btn btn-secondary">
+                        View Details
+                    </a>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="no-events">
+            <h3>No events found</h3>
+            <p>Try adjusting your search criteria or check back later for new events and announcements.</p>
+        </div>
+    }
+
+    <!-- Recommendations Section -->
+    @if (Model.Recommendations.Any())
+    {
+        <div class="recommendations-section">
+            <h2>Recommended for You</h2>
+            <div class="events-grid">
+                @foreach (var recommendation in Model.Recommendations)
+                {
+                    <div class="event-card @(recommendation.IsAnnouncement ? "announcement" : "")">
+                        
+                        <div class="category">
+                            @recommendation.Category
+                            @if (!recommendation.IsAnnouncement)
+                            {
+                                <span class="priority-display @(recommendation.Priority <= 2 ? "priority-high" : 
+                                    recommendation.Priority <= 3 ? "priority-medium" : "priority-low")">
+                                    Priority @recommendation.Priority
+                                </span>
+                            }
+                        </div>
+                        
+                        <h3>@recommendation.Title</h3>
+                        
+                        <div class="date">
+                            <i class="fas fa-calendar-alt"></i> @recommendation.EventDate.ToString("dddd, MMMM dd, yyyy 'at' h:mm tt")
+                        </div>
+                        
+                        <div class="location">
+                            <i class="fas fa-map-marker-alt"></i> @recommendation.Location
+                        </div>
+                        
+                        <p>@recommendation.Description</p>
+                        
+                        <a asp-action="Details" asp-route-id="@recommendation.Id" class="btn btn-secondary">
+                            View Details
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+    <!-- Sample Announcements Section -->
+    <div class="announcements-section">
+        <h2><i class="fas fa-bullhorn"></i> Important Announcements</h2>
+        <div class="announcements-grid">
+            <div class="announcement-card">
+                <div class="announcement-header">
+                    <h3><i class="fas fa-road"></i> Road Construction Notice</h3>
+                    <span class="announcement-date">Oct 3, 2025</span>
+                </div>
+                <p>Major road construction on Main Street will begin on October 15th, 2025. The project is expected to last 3 months. Alternative routes will be clearly marked. We apologize for any inconvenience.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-category">Infrastructure</span>
+                </div>
+            </div>
+
+            <div class="announcement-card">
+                <div class="announcement-header">
+                    <h3><i class="fas fa-recycle"></i> Waste Collection Schedule Update</h3>
+                    <span class="announcement-date">Oct 5, 2025</span>
+                </div>
+                <p>Due to the upcoming holiday season, waste collection schedules will be adjusted. Collection will be delayed by one day during the week of October 17th. Please check the updated schedule on our website.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-category">Environment</span>
+                </div>
+            </div>
+
+            <div class="announcement-card">
+                <div class="announcement-header">
+                    <h3><i class="fas fa-shield-alt"></i> Safety Awareness Campaign</h3>
+                    <span class="announcement-date">Sep 8, 2025</span>
+                </div>
+                <p>Join our community safety awareness campaign starting November 2025. Learn about emergency procedures, neighborhood watch programs, and crime prevention strategies. Free workshops available for all residents.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-category">Safety</span>
+                </div>
+            </div>
+
+            <div class="announcement-card">
+                <div class="announcement-header">
+                    <h3><i class="fas fa-calendar-check"></i> Municipal Office Hours</h3>
+                    <span class="announcement-date">Jan 10, 2025</span>
+                </div>
+                <p>Municipal offices will be closed on February 14th for Valentine's Day. Emergency services will remain available. Regular office hours resume on February 15th, 2025.</p>
+                <div class="announcement-footer">
+                    <span class="announcement-category">Administration</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+  
+    function clearFilters() {
+        // Clear search input
+        document.getElementById('searchTerm').value = '';
+        
+        // Reset category to "All"
+        document.getElementById('category').value = '';
+        
+        // Reset date filter to "All Dates"
+        document.getElementById('dateFilter').value = '';
+        
+        // Submit the form to refresh the results
+        document.querySelector('form').submit();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchTerm');
+        const categorySelect = document.getElementById('category');
+        const dateFilter = document.getElementById('dateFilter');
+        
+        // No automatic filtering - only filter when search button is clicked
+        // Users can now change dropdowns and text without triggering search
+        
+        // Add search suggestions (basic implementation)
+        searchInput.addEventListener('input', function() {
+            // Could implement autocomplete here in the future
+        });
+    });
+</script>
