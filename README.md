@@ -32,7 +32,7 @@ A modern ASP.NET Core MVC web application that demonstrates advanced data struct
 
 - .NET 8.0 SDK or later
 - Visual Studio 2022, Visual Studio Code, or any compatible IDE
-- Windows, macOS, or Linux
+- Windows, or Linux
 
 ## How to Run and Compile
 
