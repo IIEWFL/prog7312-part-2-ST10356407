@@ -1,0 +1,414 @@
+@model Municicpality.Models.LocalEvent
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background: #0a0a0a;
+        min-height: 100vh;
+        padding: 20px;
+        position: relative;
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+        background-attachment: fixed;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            radial-gradient(circle at 80px 40px, rgba(255, 255, 255, 0.015) 0.5px, transparent 0.5px),
+            radial-gradient(circle at 40px 80px, rgba(255, 255, 255, 0.025) 1.5px, transparent 1.5px);
+        background-size: 100px 100px;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    h1 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: 3rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 1;
+        letter-spacing: -0.02em;
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 48px;
+    }
+
+    .event-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .event-title {
+        color: #3b82f6;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+
+    .event-category {
+        display: inline-block;
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .event-details {
+        display: grid;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .detail-item {
+        display: flex;
+        align-items: center;
+        padding: 20px 24px;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        will-change: transform, box-shadow, background;
+    }
+
+    .detail-item:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 
+            0 12px 25px rgba(0, 0, 0, 0.2),
+            0 0 30px rgba(59, 130, 246, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .detail-item:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.08) 0%, 
+            rgba(255, 255, 255, 0.03) 50%, 
+            rgba(255, 255, 255, 0.08) 100%);
+        pointer-events: none;
+        z-index: 1;
+        border-radius: 16px;
+    }
+
+    .detail-icon {
+        font-size: 1.5rem;
+        margin-right: 16px;
+        width: 40px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    .detail-content {
+        flex: 1;
+    }
+
+    .detail-label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .detail-value {
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .event-description {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        margin-bottom: 32px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        will-change: transform, box-shadow, background;
+    }
+
+    .event-description:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.25);
+        transform: translateY(-4px) scale(1.01);
+        box-shadow: 
+            0 12px 25px rgba(0, 0, 0, 0.2),
+            0 0 30px rgba(59, 130, 246, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .event-description:hover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.08) 0%, 
+            rgba(255, 255, 255, 0.03) 50%, 
+            rgba(255, 255, 255, 0.08) 100%);
+        pointer-events: none;
+        z-index: 1;
+        border-radius: 16px;
+    }
+
+    .event-description h3 {
+        color: #3b82f6;
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+        font-weight: 700;
+    }
+
+    .event-description p {
+        color: rgba(255, 255, 255, 0.9);
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .btn-secondary {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+        margin-right: 12px;
+    }
+
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #3b82f6 0%, rgba(59, 130, 246, 0.8) 100%);
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2), 0 0 30px rgba(59, 130, 246, 0.2);
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .action-buttons {
+        text-align: center;
+        margin-top: 32px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .priority-indicator {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-left: 12px;
+    }
+
+    .priority-high {
+        background: rgba(30, 64, 175, 0.2);
+        color: #1e40af;
+    }
+
+    .priority-medium {
+        background: rgba(59, 130, 246, 0.2);
+        color: #3b82f6;
+    }
+
+    .priority-low {
+        background: rgba(96, 165, 250, 0.2);
+        color: #60a5fa;
+    }
+
+    .announcement-badge {
+        background: rgba(29, 78, 216, 0.2);
+        color: #1d4ed8;
+    }
+
+    @@media (max-width: 768px) {
+        .container {
+            margin: 10px;
+            padding: 32px 24px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 32px;
+        }
+
+        .event-title {
+            font-size: 2rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-secondary, .btn-primary {
+            margin-right: 0;
+            width: auto;
+            margin-bottom: 8px;
+        }
+    }
+</style>
+
+<div class="container">
+    <div class="event-header">
+        <div class="event-category @(Model.IsAnnouncement ? "announcement-badge" : 
+            Model.Priority <= 2 ? "priority-high" : 
+            Model.Priority <= 3 ? "priority-medium" : "priority-low")">
+            @Model.Category
+            @if (Model.IsAnnouncement)
+            {
+                <span class="priority-indicator announcement-badge">Announcement</span>
+            }
+            else
+            {
+                <span class="priority-indicator @(Model.Priority <= 2 ? "priority-high" : 
+                    Model.Priority <= 3 ? "priority-medium" : "priority-low")">
+                    Priority @Model.Priority
+                </span>
+            }
+        </div>
+        
+        <h1 class="event-title">@Model.Title</h1>
+    </div>
+
+    <div class="event-details">
+        <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="detail-content">
+                <div class="detail-label">Date & Time</div>
+                <div class="detail-value">@Model.EventDate.ToString("dddd, MMMM dd, yyyy 'at' h:mm tt")</div>
+            </div>
+        </div>
+
+        <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="detail-content">
+                <div class="detail-label">Location</div>
+                <div class="detail-value">@Model.Location</div>
+            </div>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.Organizer))
+        {
+            <div class="detail-item">
+                <div class="detail-icon"><i class="fas fa-user"></i></div>
+                <div class="detail-content">
+                    <div class="detail-label">Organizer</div>
+                    <div class="detail-value">@Model.Organizer</div>
+                </div>
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(Model.ContactInfo))
+        {
+            <div class="detail-item">
+                <div class="detail-icon"><i class="fas fa-phone"></i></div>
+                <div class="detail-content">
+                    <div class="detail-label">Contact Information</div>
+                    <div class="detail-value">@Model.ContactInfo</div>
+                </div>
+            </div>
+        }
+
+        <div class="detail-item">
+            <div class="detail-icon"><i class="fas fa-clock"></i></div>
+            <div class="detail-content">
+                <div class="detail-label">Posted</div>
+                <div class="detail-value">@Model.CreatedAt.ToString("MMMM dd, yyyy 'at' h:mm tt")</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="event-description">
+        <h3>Description</h3>
+        <p>@Model.Description</p>
+    </div>
+
+    <div class="action-buttons">
+        <a asp-action="Index" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Back to Events</a>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary"><i class="fas fa-home"></i> Home</a>
+    </div>
+</div>
